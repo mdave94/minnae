@@ -4,7 +4,7 @@ import "../mainpage/mainpage.css";
 import mainPagePicture from "../../assets/img/image05.jpg";
 import minnaeLogoText from "../../assets/png/image01.png";
 import dividerPict from "../../assets/img/image02.jpg";
-
+import twoItemPic from "../../assets/img/image07.jpg";
 export default function App() {
   const parallax = useRef<IParallax>(null!);
 
@@ -16,7 +16,7 @@ export default function App() {
             style={{
               backgroundImage: `url(${mainPagePicture})`,
               backgroundSize: "cover",
-              height: 1200,
+              height: 1100,
               opacity: 0.8,
             }}
           />
@@ -34,7 +34,11 @@ export default function App() {
         <ParallaxLayer
           offset={0.9}
           speed={1}
-          style={{ backgroundColor: "#ae9a90", height: 1800 }}
+          style={{
+            backgroundImage: `url(${twoItemPic})`,
+            backgroundColor: "#ae9a90",
+            height: 1000,
+          }}
         >
           <div className="mainpage-container">
             <p className="text-title">Mi is az a Mosolyékszer</p>
@@ -67,9 +71,9 @@ export default function App() {
           <img
             src={dividerPict}
             style={{
-              height: 350,
+              height: 450,
               width: "100%",
-              boxShadow: "10px 10px 90px black",
+              boxShadow: "10px 10px 60px black",
             }}
           />
         </ParallaxLayer>
@@ -78,7 +82,22 @@ export default function App() {
           offset={1.5}
           speed={1}
           style={{ backgroundColor: "#ae9a90", height: 1200, zIndex: -1 }}
-        />
+        >
+          <p className="text-title">Vásárlás menete</p>
+          <p className="mainpage-text">
+            Az előzetesen lefoglalt időpontban várjuk Önt központunkban. Mivel
+            minden ékszerünk tökéletesen személyre szabott, a tervezés közösen
+            történik. Kiválasztjuk a díszlap formáját, meretét, majd a
+            díszítését. Ezután meghatározzuk az átmenő stift méretét. Végül
+            felvesszük rendelését.
+          </p>
+          <p className="mainpage-text">
+            Ékszerészünk elkészíti a közösen megálmodott mosolyékszerét.
+          </p>
+          <p className="mainpage-text">
+            Az elkészült ékszert kiszállítjuk Önnek.
+          </p>
+        </ParallaxLayer>
       </Parallax>
     </div>
   );
