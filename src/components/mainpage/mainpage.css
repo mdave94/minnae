@@ -1,0 +1,28 @@
+.mainpage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-title{
+    font-size: 32px;
+    
+}
+
+.mainpage-text{
+    font-size: 18px;
+}
+
+.alert-textbox{
+    border: 1px solid black;
+    width: 400px;
+    color: rgb(114, 113, 113);
+    padding: 10px;
+    transition-duration: 0.5s;
+    
+}
+
+.alert-textbox:hover{
+  
+    scale: 1.1;
+}
