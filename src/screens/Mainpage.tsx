@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <div style={{ width: "100%", height: "100%", background: "#253237" }}>
-      <Parallax ref={parallax} pages={2}>
+      <Parallax ref={parallax} pages={2.2}>
         <ParallaxLayer offset={0} speed={0}>
           <div
             style={{
@@ -84,7 +84,7 @@ export default function App() {
         <ParallaxLayer
           offset={1.3}
           speed={1}
-          style={{ backgroundColor: "#ae9a90", height: 1200, zIndex: -1 }}
+          style={{ backgroundColor: "#ae9a90", height: 900, zIndex: 0 }}
         >
           <p className="text-title">Vásárlás menete</p>
 
