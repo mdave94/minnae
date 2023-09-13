@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import "../mainpage/mainpage.css";
-import mainPagePicture from "../../assets/img/image05.jpg";
-import minnaeLogoText from "../../assets/png/image01.png";
-import dividerPict from "../../assets/img/image02.jpg";
-import twoItemPic from "../../assets/img/image07.jpg";
+import "../components/mainpage/mainpage.css";
+import mainPagePicture from "../assets/img/image05.jpg";
+import minnaeLogoText from "../assets/png/image01.png";
+import dividerPict from "../assets/img/image02.jpg";
+import twoItemPic from "../assets/img/image07.jpg";
 export default function App() {
   const parallax = useRef<IParallax>(null!);
 
@@ -35,9 +35,9 @@ export default function App() {
           offset={0.9}
           speed={1}
           style={{
-            backgroundImage: `url(${twoItemPic})`,
-            backgroundColor: "#ae9a90",
-            height: 1000,
+            width: "100%",
+            height: "110vh",
+            backgroundColor: "rgb(174, 154, 144)",
           }}
         >
           <div className="mainpage-container">
@@ -71,7 +71,7 @@ export default function App() {
           <img
             src={dividerPict}
             style={{
-              height: 450,
+              height: 350,
               width: "100%",
               boxShadow: "10px 10px 60px black",
             }}
@@ -79,7 +79,7 @@ export default function App() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={1.5}
+          offset={1.3}
           speed={1}
           style={{ backgroundColor: "#ae9a90", height: 1200, zIndex: -1 }}
         >
