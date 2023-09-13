@@ -1,10 +1,12 @@
 import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import "../components/mainpage/mainpage.css";
+import "../../src/assets/css/mainpage.css";
 import mainPagePicture from "../assets/img/image05.jpg";
 import minnaeLogoText from "../assets/png/image01.png";
 import dividerPict from "../assets/img/image02.jpg";
 import twoItemPic from "../assets/img/image07.jpg";
+import MainpageTextComponent from "../components/mainpage/MainpageTextComponent";
+import Footer from "../components/FooterComponent";
 export default function App() {
   const parallax = useRef<IParallax>(null!);
 
@@ -42,25 +44,26 @@ export default function App() {
         >
           <div className="mainpage-container">
             <p className="text-title">Mi is az a Mosolyékszer</p>
-            <p className="mainpage-text">
+
+            <MainpageTextComponent>
               A hagyományos fogékszerektől eltérően mosolyékszereink egyszerűen
               használhatóak, könnyen behelyezhetőek és eltávolíthatók a szájból.
-            </p>
+            </MainpageTextComponent>
             <div className="alert-textbox">
               NEM IGÉNYELNEK FOGÁSZATI BEAVATKOZÁST SEM FOGORVOS KÖZREMŰKÖDÉSÉT
             </div>
-            <p className="mainpage-text">
+            <MainpageTextComponent>
               Behelyezésükhöz nem szükséges megbontani az egészséges fogzománc
               egységét sem fúrással, sem savas felület előkezeléssel.
-            </p>
+            </MainpageTextComponent>
 
             <div className="alert-textbox">
               MEGFELELŐ HASZNÁLAT MELLET TEHÁT TELJESEN BIZTOSÁGOS ESZKÖSZ
             </div>
-            <p className="mainpage-text">
+            <MainpageTextComponent>
               Kialakításuknak köszönhetően stabilan helyben maradnak, ugyanakkor
               nem zavarják a fogak érintkezését.
-            </p>
+            </MainpageTextComponent>
             <div className="alert-textbox">
               Ennek eredményeként nem kell a helybentartásukra koncentrálni
             </div>
@@ -84,19 +87,27 @@ export default function App() {
           style={{ backgroundColor: "#ae9a90", height: 1200, zIndex: -1 }}
         >
           <p className="text-title">Vásárlás menete</p>
-          <p className="mainpage-text">
+
+          <MainpageTextComponent>
             Az előzetesen lefoglalt időpontban várjuk Önt központunkban. Mivel
             minden ékszerünk tökéletesen személyre szabott, a tervezés közösen
             történik. Kiválasztjuk a díszlap formáját, meretét, majd a
             díszítését. Ezután meghatározzuk az átmenő stift méretét. Végül
             felvesszük rendelését.
-          </p>
-          <p className="mainpage-text">
+          </MainpageTextComponent>
+          <MainpageTextComponent>
             Ékszerészünk elkészíti a közösen megálmodott mosolyékszerét.
-          </p>
-          <p className="mainpage-text">
+          </MainpageTextComponent>
+          <MainpageTextComponent>
             Az elkészült ékszert kiszállítjuk Önnek.
-          </p>
+          </MainpageTextComponent>
+        </ParallaxLayer>
+        <ParallaxLayer
+          offset={1.7}
+          speed={-1}
+          style={{ backgroundColor: "#ae9a90", height: 1200, zIndex: -1 }}
+        >
+          <Footer />
         </ParallaxLayer>
       </Parallax>
     </div>
