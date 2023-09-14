@@ -12,14 +12,13 @@ export default function App() {
 
   return (
     <div style={{ width: "100%", height: "100%", background: "#253237" }}>
-      <Parallax ref={parallax} pages={2.2}>
+      <Parallax ref={parallax} pages={2.5}>
         <ParallaxLayer offset={0} speed={0}>
           <div
             style={{
               backgroundImage: `url(${mainPagePicture})`,
               backgroundSize: "cover",
               height: 1100,
-              opacity: 0.8,
             }}
           />
         </ParallaxLayer>
@@ -28,6 +27,7 @@ export default function App() {
             src={minnaeLogoText}
             style={{
               height: 600,
+              zIndex: 1,
             }}
           />
           <p style={{ fontSize: 24 }}>Fedezze fel a mosolyékszerek világát</p>
@@ -84,7 +84,7 @@ export default function App() {
         <ParallaxLayer
           offset={1.3}
           speed={1}
-          style={{ backgroundColor: "#ae9a90", height: 900, zIndex: 0 }}
+          style={{ backgroundColor: "#ae9a90", height: 1100, zIndex: 0 }}
         >
           <p className="text-title">Vásárlás menete</p>
 
@@ -102,11 +102,8 @@ export default function App() {
             Az elkészült ékszert kiszállítjuk Önnek.
           </MainpageTextComponent>
         </ParallaxLayer>
-        <ParallaxLayer
-          offset={1.7}
-          speed={-1}
-          style={{ backgroundColor: "#ae9a90", height: 1200, zIndex: -1 }}
-        >
+
+        <ParallaxLayer offset={-1} speed={-1.2} style={{ zIndex: -1 }}>
           <Footer />
         </ParallaxLayer>
       </Parallax>
