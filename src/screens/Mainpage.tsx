@@ -1,29 +1,43 @@
-import { useRef } from "react";
-import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import "../../src/assets/css/mainpage.css";
+import React, { useRef } from 'react'
+import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 import mainPagePicture from "../assets/img/image05.jpg";
 import minnaeLogoText from "../assets/png/image01.png";
-import dividerPict from "../assets/img/image02.jpg";
-import twoItemPic from "../assets/img/image07.jpg";
-import MainpageTextComponent from "../components/mainpage/MainpageTextComponent";
-import Footer from "../components/FooterComponent";
-export default function App() {
-  const parallax = useRef<IParallax>(null!);
+import MainpageTextComponent from '../components/mainpage/MainpageTextComponent';
+import "../../src/assets/css/mainpage.css";
 
+export default function App() {
+  const parallax = useRef<IParallax>(null!)
   return (
-    <div style={{ width: "100%", height: "100%", background: "#253237" }}>
-      <Parallax ref={parallax} pages={2.5}>
-        <ParallaxLayer offset={0} speed={0}>
-          <div
-            style={{
-              backgroundImage: `url(${mainPagePicture})`,
-              backgroundSize: "cover",
-              height: 1100,
-            }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer offset={0.1} speed={1}>
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        background: '#253237',
+        border: 'green',
+        borderWidth: '1px',
+        borderStyle: 'solid',
+      }}>
+      <Parallax ref={parallax} pages={2}>
+        {/* first img bg */}
+        <ParallaxLayer
+          offset={0}
+          speed={0}
+          // factor={3}
+          style={{
+            backgroundImage: `url(${mainPagePicture}`,
+            backgroundSize: 'cover',
+            height: '100vh'
+          }}
+        />
+        {/* first image title img + title */}
+        <ParallaxLayer offset={0} speed={0} style={{
+          border: 'blue',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          zIndex: 1
+        }}>
           <img
+            alt="minnaeLogoText"
             src={minnaeLogoText}
             style={{
               height: 600,
@@ -32,13 +46,12 @@ export default function App() {
           />
           <p style={{ fontSize: 24 }}>Fedezze fel a mosolyékszerek világát</p>
         </ParallaxLayer>
-
+        {/* second section -> list of features */}
         <ParallaxLayer
-          offset={0.9}
-          speed={1}
+          offset={1}
+          speed={0}
           style={{
-            width: "100%",
-            height: "110vh",
+            height: "100vh",
             backgroundColor: "rgb(174, 154, 144)",
           }}
         >
@@ -70,43 +83,8 @@ export default function App() {
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={1}>
-          <img
-            src={dividerPict}
-            style={{
-              height: 350,
-              width: "100%",
-              boxShadow: "10px 10px 60px black",
-            }}
-          />
-        </ParallaxLayer>
 
-        <ParallaxLayer
-          offset={1.3}
-          speed={1}
-          style={{ backgroundColor: "#ae9a90", height: 1100, zIndex: 0 }}
-        >
-          <p className="text-title">Vásárlás menete</p>
-
-          <MainpageTextComponent>
-            Az előzetesen lefoglalt időpontban várjuk Önt központunkban. Mivel
-            minden ékszerünk tökéletesen személyre szabott, a tervezés közösen
-            történik. Kiválasztjuk a díszlap formáját, meretét, majd a
-            díszítését. Ezután meghatározzuk az átmenő stift méretét. Végül
-            felvesszük rendelését.
-          </MainpageTextComponent>
-          <MainpageTextComponent>
-            Ékszerészünk elkészíti a közösen megálmodott mosolyékszerét.
-          </MainpageTextComponent>
-          <MainpageTextComponent>
-            Az elkészült ékszert kiszállítjuk Önnek.
-          </MainpageTextComponent>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={-1} speed={-1.2} style={{ zIndex: -1 }}>
-          <Footer />
-        </ParallaxLayer>
       </Parallax>
     </div>
-  );
+  )
 }
