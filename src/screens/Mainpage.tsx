@@ -12,7 +12,7 @@ export default function App() {
   const parallax = useRef<IParallax>(null!);
 
   return (
-    <Parallax ref={parallax} pages={3} style={{ backgroundColor: "#AE9A90" }}>
+    <Parallax ref={parallax} pages={2.5} style={{ backgroundColor: "#AE9A90" }}>
       <ParallaxLayer offset={0} speed={0}>
         <div
           style={{
@@ -36,11 +36,11 @@ export default function App() {
       </ParallaxLayer>
 
       <ParallaxLayer
-        offset={0.9}
+        offset={1}
         speed={1}
         style={{
           width: "100%",
-          height: "110vh",
+          height: "100vh",
           backgroundColor: "rgb(174, 154, 144)",
         }}
       >
